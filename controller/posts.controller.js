@@ -2,7 +2,7 @@ const pool = require("../database/index")
 const postsController = {
     getAll: async (req, res) => {
         try {
-            const [rows, fields] = await pool.query("select * from posts")
+            const [rows, fields] = await pool.query("SELECT * FROM Student")
             res.json({
                 data: rows
             })
@@ -12,7 +12,8 @@ const postsController = {
                 status: "error"
             })
         }
-    },
+    }
+    ,
     getById: async (req, res) => {
         try {
             const { id } = req.params
